@@ -1,0 +1,14 @@
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body{
+  background-image: url(./assets/movie-background-repeat.jpg);
+}
+
+:root{
+  --primary-color:#9615DB;
+  --dark-color:#303030;
+}
