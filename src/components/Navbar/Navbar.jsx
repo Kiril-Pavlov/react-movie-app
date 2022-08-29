@@ -6,14 +6,14 @@ import "./Navbar.css"
 const Navbar = () => {
   return (
     <nav className='navbar-container'>
-      <Link to='/'>
-        <div className='navbar-link'>Home</div>
+      <Link to='/' className='navbar-link'>
+        <div>Home</div>
       </Link>
-      <Link to='wishlist'>
-        <div className='navbar-link'>Wishlist</div>
+      <Link to='wishlist' className='navbar-link'>
+        <div>Wishlist</div>
       </Link>
-      <Link to='contact'>
-        <div className='navbar-link'>Contact</div>
+      <Link to='contact' className='navbar-link'>
+        <div>Contact</div>
       </Link>
     </nav>
   )

@@ -1,0 +1,20 @@
+.navbar-container{
+    background-color: var(--primary-color);
+    height: 50px;
+    display: flex;
+    grid-gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-link{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    border-bottom: 1px solid transparent;
+    transition: all .5s;
+}
+
+.navbar-link:hover{
+    border-bottom: 1px solid white;
+}
