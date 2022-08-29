@@ -14,9 +14,12 @@ function App() {
     <div className="App">
       <Header />
       <Navbar />
-      <Home />
-      <Wishlist />
-      <Contact />
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='wishlist' element={<Wishlist />}/>
+        <Route path='contact' element={<Contact />}/>
+        <Route path='*' element={<Navigate to="/" replace/>}/>
+      </Routes>
       <Footer />
     </div>
   );
