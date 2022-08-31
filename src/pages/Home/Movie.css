@@ -1,0 +1,46 @@
+.movie-item{
+    border: 3px solid var(--primary-color);
+    background-color: #303030DD;
+    color: white;
+    width: 275px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.movie-item img{
+    width: 100%;
+}
+
+.movie-title{
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 5px;
+}
+
+.movie-details{
+    display: flex;
+    justify-content: space-between;
+}
+
+.movie-genres{
+    font-style: italic;
+    text-align: left;
+    padding: 10px;
+}
+
+.movie-rating{
+    font-size: 1.4rem;
+    align-self: center;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.green{
+    background-color: green;
+}
+
+.red{
+    background-color: red;
+}
