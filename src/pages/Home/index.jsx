@@ -7,7 +7,9 @@ import "./Home.css"
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
+  const [searchedMovies, setSearchedMovies] = useState([])
   const [apiURL, setApiURL] = useState('/api/v2/list_movies.json');
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     getMovies(apiURL);
@@ -15,12 +17,21 @@ const Home = () => {
 
   const getMovies = (apiURL) => {
     axios.get(apiURL).then((response) => {
-      console.log(response)
+      // console.log(response)
       setMovies(response.data.data.movies)
+
     }).catch((error) => {
       console.log(error)
     })
   }
+  // console.log(movies[0].title)
+  const handleSearchChange = (e) => {
+    let lowerCase = e.target.value.toLowerCase();
+    setSearchValue(lowerCase);
+
+  }
+
+
 
   let genre = "all";
   let sortBy = "title"
@@ -42,14 +53,11 @@ const Home = () => {
     getMovies(apiURL);
   }
 
-  function searchMovies() {
-    getMovies(apiURL);
-  }
-
-
-
   return (
     <div className='home-container'>
+      <div className="search-input">
+        <input type="text" onKeyUp={handleSearchChange} placeholder="Search" />
+      </div>
       <div className="filters-container">
         <label htmlFor="genre">Genre:</label>
         <select name="" id="genre" onChange={setFilters}>
@@ -80,7 +88,7 @@ const Home = () => {
         <button onClick={filterMovies}>Filter Movies</button>
       </div>
       <div>
-        {movies.map(movie => <Movie key={movie.id}
+        {movies.filter(movie => (movie.title.toLowerCase().includes(searchValue))).map(movie => <Movie key={movie.id}
           movieTitle={movie.title}
           movieImg={movie.medium_cover_image}
           movieGenre={movie.genres}
