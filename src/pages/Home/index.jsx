@@ -59,35 +59,43 @@ const Home = () => {
         <input type="text" onKeyUp={handleSearchChange} placeholder="Search" />
       </div>
       <div className="filters-container">
-        <label htmlFor="genre">Genre:</label>
-        <select name="" id="genre" onChange={setFilters}>
-          <option value="all">All</option>
-          <option value="action">Action</option>
-          <option value="drama">Drama</option>
-          <option value="comedy">Comedy</option>
-          <option value="adventure">Adventure</option>
-          <option value="horror">Horror</option>
-          <option value="thriller">Thriller</option>
-          <option value="documentary">Documentary</option>
-          <option value="music">Music</option>
-          <option value="fantasy">Fantasy</option>
-          <option value="mystery">Mystery</option>
-          <option value="crime">Crime</option>
-          <option value="family">Family</option>
-        </select>
-        <label htmlFor="sort-by">Sort by:</label>
-        <select name="" id="sort-by" onChange={setFilters}>
-          <option value="title">Title</option>
-          <option value="rating">Rating</option>
-        </select>
-        <label htmlFor="order-by">Order by:</label>
-        <select name="" id="order-by" onChange={setFilters}>
-          <option value="desc">Descending</option>
-          <option value="asc">Ascending</option>
-        </select>
+        <div className='filter-item'>
+          <label htmlFor="genre">Genre:</label>
+          <select name="" id="genre" onChange={setFilters}>
+            <option value="all">All</option>
+            <option value="action">Action</option>
+            <option value="drama">Drama</option>
+            <option value="comedy">Comedy</option>
+            <option value="adventure">Adventure</option>
+            <option value="horror">Horror</option>
+            <option value="thriller">Thriller</option>
+            <option value="documentary">Documentary</option>
+            <option value="music">Music</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="mystery">Mystery</option>
+            <option value="crime">Crime</option>
+            <option value="family">Family</option>
+          </select>
+        </div>
+        <div className='filter-item'>
+          <label htmlFor="sort-by">Sort by:</label>
+          <select name="" id="sort-by" onChange={setFilters}>
+            <option value="title">Title</option>
+            <option value="rating">Rating</option>
+          </select>
+        </div>
+        <div className='filter-item'>
+          <label htmlFor="order-by">Order by:</label>
+          <select name="" id="order-by" onChange={setFilters}>
+            <option value="desc">Descending</option>
+            <option value="asc">Ascending</option>
+          </select>
+        </div>
+      </div>
+      <div className='filter-button'>
         <button onClick={filterMovies}>Filter Movies</button>
       </div>
-      <div>
+      <div className='movies-container'>
         {movies.filter(movie => (movie.title.toLowerCase().includes(searchValue))).map(movie => <Movie key={movie.id}
           movieTitle={movie.title}
           movieImg={movie.medium_cover_image}
